@@ -303,7 +303,7 @@ def parse_owner_table(df, avg_spend=None, dayfirst=False):
                .size().rename("customers").reset_index())
     else:
         raise ValueError("I could not find the columns I need. The file needs a date column, an hour column, and a "
-                         "customers column (or a sales column). Use the template below.")   
+                         "customers column (or a sales column). Use the template below.")
 
     agg = agg[["date", "hour", "customers"]].copy()
     agg["customers"] = agg["customers"].round().astype(int)
